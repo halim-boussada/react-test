@@ -14,7 +14,7 @@ function ListOfPosts() {
       setError(err.message);
     }
   };
-  
+
   const createPost = async () => {
     try {
       const res = await axios.post(

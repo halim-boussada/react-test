@@ -1,0 +1,20 @@
+
+.nav-dashboard {
+  display: flex;
+  gap: 20px;
+  background-color: #881b1b;
+}
+
+.content-dashboard {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    height: 70vh;
+    background-color: palegreen;
+    overflow-y: scroll;
+}
+
+.sidebare-dashboard {
+    background-color: #0897a4;
+    padding: 20px;
+}
