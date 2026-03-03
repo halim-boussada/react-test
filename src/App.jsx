@@ -2,12 +2,15 @@ import { Link, Route, Routes } from "react-router-dom";
 import TodoList from "./Day1/TodoList";
 import Requests from "./Day1/Requests";
 import ListOfPosts from "./Day1/ListsOfPosts";
-import DataFetch from "./DataFetch";
-import Form from "./Form";
-import Fetching2 from "./Fetching2";
-import DashboardNav from "./DashboardNav";
-import PostDetails from "./postDetails";
-import Home from "./HomePage";
+import DataFetch from "./Day2/DataFetch";
+import Form from "./Day2/Form";
+import Fetching2 from "./Day2/Fetching2";
+import DashboardNav from "./Day2/DashboardNav";
+import PostDetails from "./Day2/PostDetails";
+import Home from "./Day2/HomePage";
+import Users from "./Day2/Users";
+import Profile from "./Day2/Profile";
+import NewTodoList from "./NewTodoList";
 function App() {
   return (
     <div>
@@ -17,7 +20,10 @@ function App() {
       </nav> */}
       <Routes>
         <Route path="/" element={<Form />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/newtodo" element={<NewTodoList />} />        
         <Route path="/posts" element={<Fetching2 />} />
+        <Route path="/users" element={<Users />} />
         <Route path="/home/:lang" element={<Home />} />
         <Route path="posts/:id" element={<PostDetails />} />
         <Route path="/dashboard/*" element={<DashboardNav />}>

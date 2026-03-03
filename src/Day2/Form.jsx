@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import axios from "axios";
 
 function Form() {
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const [user, setUser] = useState({
     username: "",
     password: "",
   });
    const [errors , seterrors] = useState([])
+  
    function validation(){
     const listOfErrors = []
       if(user.username.trim() == ""){
@@ -19,15 +23,23 @@ function Form() {
       seterrors(listOfErrors)
       return listOfErrors.length > 0 ? false : true
    }
-   function submit(){
+  async function submit(){
      if(validation() === false){
         return
      }
-     console.log("submited")
-     navigate("/dashboard/req")
+    try {
+    const { data } = await axios.post("https://dummyjson.com/auth/login" , {...user , expiresInMins : 1})
+     console.log("data " , data)
+     localStorage.setItem("userData" , JSON.stringify(data))
+     navigate("/profile")
+    } catch(err){
+       seterrors([...errors , err.message])
+    }
+   
    }
   return (
     <form>
+         <h1>{t("wecometext")}</h1>
       <input
         type="text"
         name="username"
