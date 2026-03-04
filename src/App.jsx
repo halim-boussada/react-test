@@ -10,7 +10,9 @@ import PostDetails from "./Day2/PostDetails";
 import Home from "./Day2/HomePage";
 import Users from "./Day2/Users";
 import Profile from "./Day2/Profile";
-import NewTodoList from "./NewTodoList";
+import NewTodoList from "./Day2/NewTodoList";
+// import ParentComponent from "./Day3/ParentComponent";
+
 function App() {
   return (
     <div>
@@ -18,6 +20,7 @@ function App() {
         <Link to="/">Todos</Link>
         <Link to="/posts">Posts</Link>
       </nav> */}
+      {/* <ParentComponent /> */}
       <Routes>
         <Route path="/" element={<Form />} />
         <Route path="/profile" element={<Profile />} />

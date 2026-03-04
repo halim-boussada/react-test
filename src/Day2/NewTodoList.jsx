@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useLocalStorage from "./hooks/useLocalstorage";
+import useLocalStorage from "../hooks/useLocalstorage";
 
 const NewTodoList = () => {
   const [inputValue, setInputValue] = useState("");

@@ -33,6 +33,7 @@ function ListOfPosts() {
 
   useEffect(() => {
     getPosts();
+    console.log("hhellooo")
   }, []);
 
   return (
